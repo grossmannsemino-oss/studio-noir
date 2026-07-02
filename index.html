@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Noir — Hair & Beauty</title>
+<meta name="description" content="Studio Noir — Friseur- und Beauty-Salon für zeitloses, modernes Styling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#141212;
+    --charcoal:#1f1c1c;
+    --gold:#c9a15a;
+    --gold-light:#e6cd9d;
+    --blush:#e8d5cf;
+    --cream:#f7f3ef;
+    --muted:#9c9490;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);line-height:1.7;}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1120px;margin:0 auto;padding:0 28px;}
+  .eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(20,18,18,0.92);backdrop-filter:blur(8px);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--cream);letter-spacing:2px;}
+  .logo span{color:var(--gold);}
+  .nav-links{display:flex;gap:38px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;}
+  .nav-links a{color:rgba(247,243,239,0.7);transition:color .2s;}
+  .nav-links a:hover{color:var(--gold);}
+  .btn{
+    display:inline-block;padding:13px 30px;border:1px solid var(--gold);color:var(--gold);
+    font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:all .25s;
+  }
+  .btn:hover{background:var(--gold);color:var(--black);}
+  .btn-solid{background:var(--gold);color:var(--black);border:1px solid var(--gold);}
+  .btn-solid:hover{background:transparent;color:var(--gold);}
+
+  .hero{
+    background:linear-gradient(180deg,var(--black) 0%, var(--charcoal) 100%);
+    color:var(--cream);padding:110px 0 100px;text-align:center;position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 0%, rgba(201,161,90,0.15), transparent 60%);
+  }
+  .hero-inner{position:relative;max-width:700px;margin:0 auto;}
+  .hero h1{font-size:64px;line-height:1.1;margin:20px 0 24px;}
+  .hero p{color:var(--muted);font-size:17px;max-width:480px;margin:0 auto 36px;}
+
+  section{padding:90px 0;}
+  .section-head{text-align:center;max-width:600px;margin:0 auto 56px;}
+  .section-head h2{font-size:40px;margin-top:14px;}
+  .section-head p{color:var(--muted);margin-top:14px;font-size:15px;}
+
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;}
+  .about-visual{aspect-ratio:3/4;background:linear-gradient(160deg,var(--blush),#c9a598);position:relative;}
+  .about-visual::after{content:"✂";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:100px;color:rgba(20,18,18,0.15);}
+  .about-text h2{font-size:38px;margin-bottom:20px;}
+  .about-text p{color:#5c5652;margin-bottom:16px;font-size:15px;}
+  .about-list{margin-top:24px;display:flex;flex-direction:column;gap:12px;}
+  .about-list div{display:flex;gap:12px;align-items:baseline;font-size:14px;}
+  .about-list span{color:var(--gold);}
+
+  .services{background:var(--black);color:var(--cream);}
+  .services .section-head p, .services .eyebrow{color:var(--muted);}
+  .services .eyebrow{color:var(--gold);}
+  .service-list{display:grid;grid-template-columns:1fr 1fr;gap:0 60px;}
+  .service-row{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:20px 0;border-bottom:1px solid rgba(247,243,239,0.12);
+  }
+  .service-row h3{font-size:20px;font-weight:600;}
+  .service-row p{color:var(--muted);font-size:13px;margin-top:4px;}
+  .service-row .price{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:20px;white-space:nowrap;margin-left:20px;}
+
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;}
+  .gallery div{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-size:32px;color:rgba(20,18,18,0.25);}
+  .p1{background:var(--blush);}
+  .p2{background:#d8c3ba;}
+  .p3{background:var(--charcoal);color:rgba(247,243,239,0.25) !important;}
+  .p4{background:var(--gold-light);}
+
+  .testimonial{text-align:center;}
+  .testimonial blockquote{font-family:'Cormorant Garamond',serif;font-size:30px;max-width:680px;margin:0 auto 20px;font-style:italic;}
+  .testimonial .who{color:var(--gold);font-size:13px;letter-spacing:1px;text-transform:uppercase;}
+  .stars{color:var(--gold);margin-bottom:20px;letter-spacing:4px;}
+
+  .contact{background:var(--charcoal);color:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .contact-item{margin-bottom:26px;}
+  .contact-item .eyebrow{display:block;margin-bottom:8px;}
+  .contact-item p{color:var(--cream);font-size:16px;}
+  .hours-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(247,243,239,0.1);font-size:14px;}
+  .hours-row:last-child{border-bottom:none;}
+
+  footer{background:var(--black);color:var(--muted);padding:44px 0;text-align:center;font-size:13px;}
+  footer .logo{color:var(--cream);margin-bottom:10px;display:block;}
+  footer .made{margin-top:10px;opacity:0.6;font-size:11px;}
+
+  @media(max-width:860px){
+    .nav-links{display:none;}
+    .hero h1{font-size:42px;}
+    .about-grid{grid-template-columns:1fr;}
+    .service-list{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:1fr 1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <div class="logo">Studio <span>Noir</span></div>
+    <div class="nav-links">
+      <a href="#about">Salon</a>
+      <a href="#services">Leistungen</a>
+      <a href="#gallery">Galerie</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+    <a href="#contact" class="btn">Termin buchen</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="eyebrow">Hair &amp; Beauty Studio</span>
+    <h1>Zeitlose Eleganz,<br>modern interpretiert.</h1>
+    <p>In unserem Studio verbinden wir Präzision mit Kreativität — für einen Look, der wirklich zu dir passt.</p>
+    <a href="#contact" class="btn btn-solid">Jetzt Termin sichern</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-visual"></div>
+    <div class="about-text">
+      <span class="eyebrow">Über uns</span>
+      <h2>Wo Handwerk auf Stil trifft</h2>
+      <p>Seit über zehn Jahren gestalten wir Looks, die Persönlichkeit unterstreichen statt sie zu überdecken. Unser Team aus erfahrenen Stylisten bildet sich stetig fort, um immer am Puls der Zeit zu sein.</p>
+      <div class="about-list">
+        <div><span>—</span> Ausschließlich hochwertige, nachhaltige Produkte</div>
+        <div><span>—</span> Individuelle Typberatung vor jedem Termin</div>
+        <div><span>—</span> Ruhige, private Atmosphäre</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Leistungen</span>
+      <h2>Unsere Preisliste</h2>
+      <p>Eine Auswahl unserer beliebtesten Behandlungen.</p>
+    </div>
+    <div class="service-list">
+      <div class="service-row"><div><h3>Damenhaarschnitt</h3><p>inkl. Waschen &amp; Styling</p></div><span class="price">ab 58 €</span></div>
+      <div class="service-row"><div><h3>Herrenhaarschnitt</h3><p>inkl. Waschen &amp; Styling</p></div><span class="price">ab 38 €</span></div>
+      <div class="service-row"><div><h3>Balayage</h3><p>freihändige Strähnentechnik</p></div><span class="price">ab 145 €</span></div>
+      <div class="service-row"><div><h3>Coloration</h3><p>Ansatz oder komplett</p></div><span class="price">ab 65 €</span></div>
+      <div class="service-row"><div><h3>Braut-Styling</h3><p>inkl. Probetermin</p></div><span class="price">ab 190 €</span></div>
+      <div class="service-row"><div><h3>Augenbrauen &amp; Wimpern</h3><p>Zupfen, Färben, Lifting</p></div><span class="price">ab 25 €</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding:0;">
+  <div class="gallery">
+    <div class="p1">✂</div>
+    <div class="p2">💇</div>
+    <div class="p3">✨</div>
+    <div class="p4">💫</div>
+  </div>
+</section>
+
+<section class="testimonial container">
+  <div class="stars">★★★★★</div>
+  <blockquote>„Endlich ein Salon, der wirklich zuhört. Das Ergebnis war noch besser, als ich es mir vorgestellt hatte.“</blockquote>
+  <div class="who">Lena B. — Google Rezension</div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="contact-item">
+        <span class="eyebrow">Adresse</span>
+        <p>Kurfürstendamm 45, 10707 Berlin</p>
+      </div>
+      <div class="contact-item">
+        <span class="eyebrow">Kontakt</span>
+        <p>030 987 654 32 · termin@studio-noir.de</p>
+      </div>
+      <a href="#" class="btn btn-solid">Online Termin buchen</a>
+    </div>
+    <div>
+      <span class="eyebrow" style="display:block;margin-bottom:16px;">Öffnungszeiten</span>
+      <div class="hours-row"><span>Dienstag – Freitag</span><span>9:00 – 19:00</span></div>
+      <div class="hours-row"><span>Samstag</span><span>9:00 – 15:00</span></div>
+      <div class="hours-row"><span>Sonntag &amp; Montag</span><span>geschlossen</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span class="logo">Studio Noir</span>
+    <div>Hair &amp; Beauty Studio</div>
+    <div class="made">Beispiel-Webseite · gestaltet als Portfolio-Vorlage</div>
+  </div>
+</footer>
+
+</body>
+</html>
